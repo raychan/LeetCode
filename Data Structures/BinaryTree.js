@@ -1,6 +1,6 @@
 var Node = require('./Node');
 
-exports.fromArray = function (valArray) {
+function fromArray (valArray) {
   var nodeArray = valArray.map(function (val) {
     return val === null ? null : new Node(val);
   }).map(function (node, index, nodeArray) {
@@ -12,3 +12,5 @@ exports.fromArray = function (valArray) {
   })
   return nodeArray[0]
 }
+
+exports.fromArray = fromArray;
